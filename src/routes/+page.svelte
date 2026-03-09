@@ -3,7 +3,6 @@
     import TasksList from "$lib/components/tasks-list.svelte";
     import type { Filter, Task } from "$lib/types";
 
-    let message = "Tasks App"
     let currentFilter = $state<Filter>("all");
     let tasks = $state<Task[]>([]);
 
@@ -49,10 +48,7 @@
 
 <div class="container">
     <section class="section">
-        <h1 class="is-size-2">{message}</h1>
         <TasksForm {addTask} />
-    </section>
-    <section class="section">
         {#if tasks.length}
             <p>{totalDone} / {tasks.length} tasks completed</p>
             <div class="my-2">
